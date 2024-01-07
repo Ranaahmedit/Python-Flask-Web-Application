@@ -3,10 +3,10 @@ services:
   web:
     build: .
     ports:
-     - "9000:5000"
+      - "9000:5000"
     volumes:
-     - .:/code
-    depends_on:
-     - redis
+      - .:/app
+    environment:
+      FLASK_DEBUG: "true"
   redis:
-    image: redis
+    image: "redis:alpine"
